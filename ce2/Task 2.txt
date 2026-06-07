@@ -1,0 +1,9 @@
+0) Ensure there is an existing connection pool to the MySQL database
+
+1) Create a new MySQL database helper function that returns a promise with the query below to execute the sql query in the database. Export this function. 
+
+SELECT COUNT(Sid) AS count, dept_code AS dept 
+FROM staff 
+GROUP BY dept_code
+
+2) Create a new get route handler for the /count in routes/dept.ts. This should call the function we made previously and use res.send(JSON.stringify(data)) to output the data.
