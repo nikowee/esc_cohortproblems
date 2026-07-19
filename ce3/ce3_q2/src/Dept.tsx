@@ -36,7 +36,17 @@ function DeptList({depts}: DeptListProps) {
         );
     }
     return (        
-        <div></div> // TODO: fixme
+        // TODO: fixme
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>Department Code</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                {rows}
+            </tbody>
+        </table>
     )
 }
 
