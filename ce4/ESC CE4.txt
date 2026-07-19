@@ -1,0 +1,76 @@
+Task 1:
+Identifying use cases:
+- Sign up
+- Login
+- Order food (use verb noun format)
+
+Sign up UC1:
+- Name, Description
+- Actors: 
+	- primary: student
+	- secondary:
+- Trigger: student requests sign up
+- Precondition: student does not have an account
+- Post condition: student has an account in the food order system
+- Error states: invalid email -> invalid login/error
+- Operational flow: 
+	1. student enters email, password, mobile number, room number, location, dietary requirements
+	2. system sends email address to email server for verification
+	3. email server verifies email and sends positive response
+	4. system creates an account and saves the details
+	5. system sends a request to email server for confirmation email
+- Alternate flow
+	3a. email sends negative response to system
+	4a. system sends error message to user
+	5a. go back to step 1
+
+
+Order food UC2:
+- Actors:
+	- primary: student
+	- secondary: c
+- Trigger: student confirms intent to order
+- Precondition: student logged in
+- Postcondition: order is placed
+- Error states: order is not placed, system is error logged
+- Operational flow:
+	1. student browses list of food courts
+	2. student selects food court
+	3. student selects preferred food
+	4. student enters delivery location
+	5. student calculates the charges
+	6. system shows the prompt to enter card details
+	7. student enters card details
+	8. system sends card details to payment gateway to verify
+	9. payment gateway verifies card details
+	10. payment gateway sends confirmation to system
+	11. system updates payment records
+	12. system sends food court notification
+	13. system sends order confirmation to student
+- Alternate flow
+	7a. student enters invalid card details
+	8. (same as op flow)
+	9a. payment gateway detects invalidity  
+	10a. payment gateway sends -ve response to system
+	11a. sys sends error msg to student
+
+- there can be multiple happy paths. alt need not be a negative path
+- steps 6-11 is a payment sub-usecase -> include usecase because its mandatory (extend usecase only if payment is optional)
+
+
+Task 2:
+1. notify rider
+2. actor
+prep time at t
+- precondition: order is placed (time = t-10)
+- post condition: notification received by rider
+
+encouraged to use code to create usecase diagrams (plantum, mermaid -> can ai)
+
+sign up, login, order food, notify rider, notify order ready
+
+
+Errors to note:
+- misidentification of actors (primary, sec, system)
+- include/extend identification and direction of arrows
+- sub use case

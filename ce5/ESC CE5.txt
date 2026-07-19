@@ -1,0 +1,23 @@
+Food store registry
+- contains Food Stalls
+
+Food Stall
+- name
+- location
+- menu
+
+
+Think like a book keeper!
+1) Identify class names for the actors
+2) For each operation identify the data records involved
+3) Identify attributes 
+4) Identify relationships
+
+
+- Use Actors (Primary: Student) to find your classes
+
+Classes:
+Student (name, email, location, mobile ...)
+Login: email reg (list of emails), sms reg (list of sms)
+Payment: payment gateway (name, url(?), email), payment registry (list of payment record) -> payment record
+Food Stalls and Ordering: food stall registry -> food stall -> menu (list of menu item) -> menu item (name, price) -> cart (list of cart item) -> cart item (menu item, qty) ---> Order ( | send_reminder)-> Order Reg  
